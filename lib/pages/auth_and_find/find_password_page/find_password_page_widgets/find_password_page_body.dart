@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:town/core/constant/color.dart';
+import 'package:town/core/constant/move.dart';
 import 'package:town/core/constant/size.dart';
 import 'package:town/utils/custom_util.dart';
 
@@ -105,10 +106,12 @@ class FindPasswordPageBody extends StatelessWidget {
                 Spacer(),
                 basicButton(
                   context: context,
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.popAndPushNamed(context, Move.findPasswordChange);
+                  },
                   buttonColor: k3DColor,
                   textColor: Colors.white,
-                  text: "아이디 찾기",
+                  text: "비밀번호 찾기",
                 ),
               ],
             ),
