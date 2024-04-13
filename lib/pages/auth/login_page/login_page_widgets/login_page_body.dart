@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:town/core/constant/color.dart';
 import 'package:town/core/constant/size.dart';
+import 'package:town/pages/auth/join_page/join_page.dart';
+import 'package:town/pages/auth/join_page/join_page_widgets/join_page_body.dart';
 import 'package:town/utils/custom_util.dart';
 
 class LoginPageBody extends StatefulWidget {
@@ -19,7 +21,9 @@ class _LoginPageBodyState extends State<LoginPageBody> {
       padding: const EdgeInsets.all(16.0),
       child: ListView(
         children: [
+          SizedBox(height: MediaQuery.of(context).size.height * 0.1),
           SvgPicture.asset("assets/logo/logo.svg"),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.02),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -89,7 +93,13 @@ class _LoginPageBodyState extends State<LoginPageBody> {
           SizedBox(height: MediaQuery.of(context).size.height * 0.02),
           basicButton(
             context: context,
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => JoinPage(),
+                ),
+              );
+            },
             buttonColor: Colors.white,
             textColor: k3DColor,
             text: "회원가입",

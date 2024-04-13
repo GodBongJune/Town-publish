@@ -77,28 +77,43 @@ Widget customTextFormField({
   required String hintText,
   required bool obscureText,
   TextEditingController? controller,
+  String? suffix,
+  VoidCallback? suffixOnTap,
 }) {
-  return Container(
-    height: MediaQuery.of(context).size.height * 0.07,
-    child: TextFormField(
-      obscureText: obscureText,
-      controller: controller,
-      style: TextStyle(decorationThickness: 0),
-      decoration: InputDecoration(
-        border: InputBorder.none,
-        hintText: "${hintText}",
-        hintStyle: TextStyle(
-          color: kC8Color,
-          fontSize: size15,
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: k3DColor),
-          borderRadius: BorderRadius.circular(100),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: kE8Color),
-          borderRadius: BorderRadius.circular(100),
-        ),
+  return TextFormField(
+    obscureText: obscureText,
+    controller: controller,
+    style: TextStyle(decorationThickness: 0),
+    decoration: InputDecoration(
+      suffix: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        child: suffix != null
+            ? InkWell(
+                onTap: suffixOnTap,
+                child: Text(
+                  "${suffix}",
+                  style: TextStyle(
+                    color: k3DColor,
+                    fontSize: size15,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              )
+            : null,
+      ),
+      border: InputBorder.none,
+      hintText: "${hintText}",
+      hintStyle: TextStyle(
+        color: kC8Color,
+        fontSize: size15,
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: k3DColor),
+        borderRadius: BorderRadius.circular(100),
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: kE8Color),
+        borderRadius: BorderRadius.circular(100),
       ),
     ),
   );
