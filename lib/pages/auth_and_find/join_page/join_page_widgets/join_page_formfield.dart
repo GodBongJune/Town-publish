@@ -120,7 +120,9 @@ class JoinPageFormfield extends StatelessWidget {
             //회원가입 버튼
             basicButton(
               context: context,
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pop();
+              },
               buttonColor: k3DColor,
               textColor: Colors.white,
               text: "회원가입하기",

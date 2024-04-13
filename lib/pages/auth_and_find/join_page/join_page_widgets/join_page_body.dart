@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:town/core/constant/color.dart';
 import 'package:town/core/constant/move.dart';
 import 'package:town/core/constant/size.dart';
-import 'package:town/pages/auth/join_page/join_page_widgets/join_page_formfield.dart';
 import 'package:town/utils/custom_util.dart';
 
 class JoinPageBody extends StatefulWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:town/pages/auth/login_page/login_page.dart';
+import 'package:town/pages/auth_and_find/login_page/login_page.dart';
 import 'package:town/pages/launch_page/launch_page_widgets/launch_page_body.dart';
 
 class LaunchPage extends StatelessWidget {

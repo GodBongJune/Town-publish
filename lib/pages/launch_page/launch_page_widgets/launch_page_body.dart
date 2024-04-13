@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:town/core/constant/color.dart';
 import 'package:town/core/constant/size.dart';
-import 'package:town/pages/auth/login_page/login_page.dart';
+import 'package:town/pages/auth_and_find/login_page/login_page.dart';
 import 'package:town/utils/custom_util.dart';
 
 class LaunchPageBody extends StatefulWidget {

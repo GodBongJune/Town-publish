@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:town/core/constant/color.dart';
 import 'package:town/core/constant/size.dart';
-import 'package:town/pages/auth/join_page/join_page.dart';
-import 'package:town/pages/auth/join_page/join_page_widgets/join_page_body.dart';
+import 'package:town/pages/auth_and_find/find_email_page/find_email_page.dart';
+import 'package:town/pages/auth_and_find/join_page/join_page.dart';
 import 'package:town/utils/custom_util.dart';
 
 class LoginPageBody extends StatefulWidget {
@@ -109,7 +109,13 @@ class _LoginPageBodyState extends State<LoginPageBody> {
               Flexible(
                 child: basicButton(
                   context: context,
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => FindEmailPage(),
+                      ),
+                    );
+                  },
                   buttonColor: Colors.transparent,
                   textColor: k3DColor,
                   text: "이메일 찾기",

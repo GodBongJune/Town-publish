@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:town/pages/auth/join_page/join_page_widgets/join_page_body.dart';
+import 'package:town/pages/auth_and_find/join_page/join_page_widgets/join_page_body.dart';
 
 class JoinPage extends StatelessWidget {
   const JoinPage({super.key});
