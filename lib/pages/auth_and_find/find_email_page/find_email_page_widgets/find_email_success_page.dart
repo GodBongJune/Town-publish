@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:town/core/constant/color.dart';
+import 'package:town/core/constant/move.dart';
 import 'package:town/core/constant/size.dart';
 import 'package:town/utils/custom_util.dart';
 
@@ -44,7 +45,9 @@ class FindEmailSuccessPage extends StatelessWidget {
                   Spacer(),
                   basicButton(
                     context: context,
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).popAndPushNamed(Move.findPassword);
+                    },
                     buttonColor: Colors.white,
                     textColor: k3DColor,
                     text: "비밀번호 찾기",

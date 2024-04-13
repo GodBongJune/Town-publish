@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:town/pages/auth_and_find/find_email_page/find_email_page_widgets/find_email_success_page.dart';
+import 'package:town/pages/auth_and_find/find_password_page/find_password_page.dart';
 import 'package:town/pages/auth_and_find/join_page/join_page_widgets/join_page_formfield.dart';
 
 class Move {
@@ -8,6 +9,9 @@ class Move {
 
   //이메일 찾기 성공 페이지
   static String findEmailSuccess = "/findEmailSuccess";
+
+  //비밀번호 찾기 페이지
+  static String findPassword = "/findPassword";
 }
 
 Map<String, Widget Function(BuildContext)> getRouters() {
@@ -17,5 +21,8 @@ Map<String, Widget Function(BuildContext)> getRouters() {
 
     //이메일 찾기 성공 페이지
     Move.findEmailSuccess: (context) => FindEmailSuccessPage(),
+
+    //비밀번호 찾기 페이지
+    Move.findPassword: (context) => FindPasswordPage(),
   };
 }
