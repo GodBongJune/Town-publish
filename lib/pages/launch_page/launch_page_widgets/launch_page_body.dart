@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:town/core/constant/color.dart';
 import 'package:town/core/constant/size.dart';
+import 'package:town/pages/auth/login_page/login_page.dart';
+import 'package:town/utils/custom_util.dart';
 
 class LaunchPageBody extends StatefulWidget {
   const LaunchPageBody({super.key});
@@ -40,54 +43,80 @@ class _LaunchPageBodyState extends State<LaunchPageBody> {
               child: Column(
                 children: [
                   InkWell(
-                    onTap: () {
-                      setState(() {
-                        galleryAgree = !galleryAgree;
-                      });
-                    },
+                    onTap: () {},
                     child: Row(
                       children: [
-                        Icon(
-                          Icons.radio_button_checked,
-                          color: galleryAgree ? k3DColor : kD9Color,
-                          size: 30,
-                        ),
+                        SvgPicture.asset("assets/icons/startIcon1.svg"),
                         SizedBox(width: 5),
                         Text(
                           "사진첩/갤러리 접근권한 (선택)",
-                          style: TextStyle(
-                            color: k3DColor,
-                            fontSize: size15,
-                          ),
+                          style: TextStyle(color: k3DColor, fontSize: size15),
                         ),
                       ],
                     ),
                   ),
+                  // InkWell(
+                  //   onTap: () {
+                  //     setState(() {
+                  //       galleryAgree = !galleryAgree;
+                  //     });
+                  //   },
+                  //   child: Row(
+                  //     children: [
+                  //       Icon(
+                  //         Icons.radio_button_checked,
+                  //         color: galleryAgree ? k3DColor : kD9Color,
+                  //         size: 30,
+                  //       ),
+                  //       SizedBox(width: 5),
+                  //       Text(
+                  //         "사진첩/갤러리 접근권한 (선택)",
+                  //         style: TextStyle(
+                  //           color: k3DColor,
+                  //           fontSize: size15,
+                  //         ),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.02),
                   InkWell(
-                    onTap: () {
-                      setState(() {
-                        pushAgree = !pushAgree;
-                      });
-                    },
+                    onTap: () {},
                     child: Row(
                       children: [
-                        Icon(
-                          Icons.radio_button_checked,
-                          color: pushAgree ? k3DColor : kD9Color,
-                          size: 30,
-                        ),
+                        SvgPicture.asset("assets/icons/startIcon1.svg"),
                         SizedBox(width: 5),
                         Text(
                           "푸시 알림 (선택)",
-                          style: TextStyle(
-                            color: k3DColor,
-                            fontSize: size15,
-                          ),
+                          style: TextStyle(color: k3DColor, fontSize: size15),
                         ),
                       ],
                     ),
-                  ),
+                  )
+                  // InkWell(
+                  //   onTap: () {
+                  //     setState(() {
+                  //       pushAgree = !pushAgree;
+                  //     });
+                  //   },
+                  //   child: Row(
+                  //     children: [
+                  //       Icon(
+                  //         Icons.radio_button_checked,
+                  //         color: pushAgree ? k3DColor : kD9Color,
+                  //         size: 30,
+                  //       ),
+                  //       SizedBox(width: 5),
+                  //       Text(
+                  //         "푸시 알림 (선택)",
+                  //         style: TextStyle(
+                  //           color: k3DColor,
+                  //           fontSize: size15,
+                  //         ),
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
                 ],
               ),
             ),
@@ -110,32 +139,18 @@ class _LaunchPageBodyState extends State<LaunchPageBody> {
             ),
           ),
           Spacer(),
-          InkWell(
+          basicButton(
+            context: context,
             onTap: () {
-              // Navigator.pushReplacement(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) => LoginPage(),
-              //   ),
-              // );
-            },
-            child: Container(
-              width: double.infinity,
-              height: MediaQuery.of(context).size.height * 0.075,
-              decoration: BoxDecoration(
-                color: k3DColor,
-                borderRadius: BorderRadius.circular(5),
-              ),
-              child: Center(
-                child: Text(
-                  "확인",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: size15,
-                      fontWeight: FontWeight.bold),
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) => LoginPage(),
                 ),
-              ),
-            ),
+              );
+            },
+            buttonColor: k3DColor,
+            textColor: Colors.white,
+            text: "확인",
           )
         ],
       ),

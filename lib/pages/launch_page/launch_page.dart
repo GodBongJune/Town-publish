@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:town/pages/auth/login_page/login_page.dart';
 import 'package:town/pages/launch_page/launch_page_widgets/launch_page_body.dart';
 
 class LaunchPage extends StatelessWidget {
@@ -13,12 +14,11 @@ class LaunchPage extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              // Navigator.pushReplacement(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) => LoginPage(),
-              //   ),
-              // );
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) => LoginPage(),
+                ),
+              );
             },
             icon: Icon(CupertinoIcons.clear),
           ),
