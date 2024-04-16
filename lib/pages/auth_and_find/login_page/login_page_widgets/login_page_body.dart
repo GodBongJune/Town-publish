@@ -5,6 +5,7 @@ import 'package:town/core/constant/size.dart';
 import 'package:town/pages/auth_and_find/find_email_page/find_email_page.dart';
 import 'package:town/pages/auth_and_find/find_password_page/find_password_page.dart';
 import 'package:town/pages/auth_and_find/join_page/join_page.dart';
+import 'package:town/pages/main_page.dart';
 import 'package:town/utils/custom_util.dart';
 
 class LoginPageBody extends StatefulWidget {
@@ -86,7 +87,14 @@ class _LoginPageBodyState extends State<LoginPageBody> {
           SizedBox(height: MediaQuery.of(context).size.height * 0.02),
           basicButton(
             context: context,
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(
+                  builder: (context) => MainPage(),
+                ),
+                (route) => false,
+              );
+            },
             buttonColor: k3DColor,
             textColor: Colors.white,
             text: "로그인",

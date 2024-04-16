@@ -84,7 +84,7 @@ class _LaunchPageBodyState extends State<LaunchPageBody> {
                     onTap: () {},
                     child: Row(
                       children: [
-                        SvgPicture.asset("assets/icons/startIcon1.svg"),
+                        SvgPicture.asset("assets/icons/startIcon2.svg"),
                         SizedBox(width: 5),
                         Text(
                           "푸시 알림 (선택)",
