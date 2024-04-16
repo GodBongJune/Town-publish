@@ -35,7 +35,7 @@ AppBarTheme appBarTheme() {
     // foregroundColor: Colors.white,
     titleTextStyle: TextStyle(
       color: k3DColor,
-      fontSize: size15,
+      fontSize: size18,
     ),
     centerTitle: true,
     elevation: 0,
