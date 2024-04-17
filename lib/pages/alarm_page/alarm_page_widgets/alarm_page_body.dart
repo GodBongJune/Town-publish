@@ -21,38 +21,39 @@ class AlarmPageBody extends StatelessWidget {
 
     return Padding(
       padding: const EdgeInsets.all(16.0),
-      child: ListView.separated(
+      child: ListView.builder(
         itemCount: alarmList.length,
         itemBuilder: (context, index) {
-          return InkWell(
-            onTap: () {},
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  alarmList[index]["title"],
-                  style: TextStyle(
-                    color: k3DColor,
-                    fontSize: size15,
-                    fontWeight: FontWeight.bold,
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            child: InkWell(
+              onTap: () {},
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    alarmList[index]["title"],
+                    style: TextStyle(
+                      color: k3DColor,
+                      fontSize: size15,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                   ),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-                Text(
-                  alarmList[index]["time"],
-                  style: TextStyle(
-                    color: k9DColor,
-                    fontSize: size13,
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+                  Text(
+                    alarmList[index]["time"],
+                    style: TextStyle(
+                      color: k9DColor,
+                      fontSize: size13,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           );
         },
-        separatorBuilder: (context, index) =>
-            Divider(thickness: 1, color: kEEColor),
       ),
     );
   }

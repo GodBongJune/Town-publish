@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:town/core/constant/color.dart';
 import 'package:town/core/constant/size.dart';
+import 'package:town/pages/content_page/content_page.dart';
 
 class HomePageBody extends StatefulWidget {
   const HomePageBody({super.key});
@@ -109,7 +110,13 @@ class _HomePageBodyState extends State<HomePageBody> {
             itemCount: homeList.length,
             itemBuilder: (context, index) {
               return InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => ContentPage(),
+                    ),
+                  );
+                },
                 child: SvgPicture.asset(
                   homeList[index]["image"],
                 ),
