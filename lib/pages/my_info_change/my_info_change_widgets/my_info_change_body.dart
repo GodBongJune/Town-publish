@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:town/core/constant/color.dart';
 import 'package:town/core/constant/size.dart';
+import 'package:town/pages/my_info_change/my_info_change_widgets/my_info_change_password.dart';
 import 'package:town/utils/custom_util.dart';
 
 class MyInfoChangeBody extends StatelessWidget {
@@ -150,7 +151,13 @@ class MyInfoChangeBody extends StatelessWidget {
                         ),
                         Spacer(),
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => MyInfoChangePassword(),
+                              ),
+                            );
+                          },
                           child: Text(
                             "변경",
                             style: TextStyle(
