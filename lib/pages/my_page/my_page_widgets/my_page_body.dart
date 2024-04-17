@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:town/core/constant/color.dart';
 import 'package:town/core/constant/size.dart';
 import 'package:town/pages/my_info_change/my_info_change_page.dart';
+import 'package:town/pages/qna_page/qna_page.dart';
 
 class MyPageBody extends StatelessWidget {
   const MyPageBody({super.key});
@@ -142,7 +143,13 @@ class MyPageBody extends StatelessWidget {
                 ),
                 Divider(thickness: 1, color: kEEColor),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => QnAPage(),
+                      ),
+                    );
+                  },
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Row(

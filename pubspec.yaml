@@ -40,6 +40,8 @@ dependencies:
   animated_splash_screen: ^1.0.1+2 #Splash화면 라이브러리
   logger: ^2.0.2+1 #로그 라이브러리
   flutter_secure_storage: ^9.0.0 #휴대폰저장 라이브러리
+  image_picker: ^1.0.8 #사진선택 라이브러리
+
 
 
 dev_dependencies:
