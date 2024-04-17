@@ -54,12 +54,32 @@ class ContentPageWrite extends StatelessWidget {
                     ),
                   ),
                   Spacer(),
-                  basicButton(
-                    context: context,
-                    onTap: () {},
-                    buttonColor: k3DColor,
-                    textColor: Colors.white,
-                    text: "등록",
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.1,
+                    child: Row(
+                      children: [
+                        Expanded(
+                          flex: 2,
+                          child: InkWell(
+                            onTap: () {},
+                            child: Icon(
+                              Icons.image_outlined,
+                              size: 50,
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          flex: 7,
+                          child: basicButton(
+                            context: context,
+                            onTap: () {},
+                            buttonColor: k3DColor,
+                            textColor: Colors.white,
+                            text: "등록",
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
