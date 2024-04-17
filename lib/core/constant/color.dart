@@ -10,3 +10,4 @@ const kC8Color = Color(0xFFC8C8C8);
 const kE8Color = Color(0xFFE8E8E8);
 const kFEColor = Color(0xFFFEF8E5);
 const kEEColor = Color(0xFFEEEEEE);
+const kFAColor = Color(0xFFFAFAFA);
