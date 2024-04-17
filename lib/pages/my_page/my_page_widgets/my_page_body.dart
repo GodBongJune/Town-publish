@@ -4,6 +4,7 @@ import 'package:town/core/constant/color.dart';
 import 'package:town/core/constant/size.dart';
 import 'package:town/pages/bookmark_list_page/bookmark_list_page.dart';
 import 'package:town/pages/my_info_change/my_info_change_page.dart';
+import 'package:town/pages/my_write_page/my_write_page.dart';
 import 'package:town/pages/qna_page/qna_page.dart';
 
 class MyPageBody extends StatelessWidget {
@@ -71,43 +72,63 @@ class MyPageBody extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Column(
-                      children: [
-                        Text(
-                          "게시물",
-                          style: TextStyle(
-                            color: k3DColor,
-                            fontSize: size15,
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => MyWritePage(),
                           ),
-                        ),
-                        Text(
-                          "1",
-                          style: TextStyle(
-                            color: k3DColor,
-                            fontSize: size20,
-                            fontWeight: FontWeight.bold,
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          Text(
+                            "게시물",
+                            style: TextStyle(
+                              color: k3DColor,
+                              fontSize: size15,
+                            ),
                           ),
-                        ),
-                      ],
+                          Text(
+                            "1",
+                            style: TextStyle(
+                              color: k3DColor,
+                              fontSize: size20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                    Column(
-                      children: [
-                        Text(
-                          "댓글",
-                          style: TextStyle(
-                            color: k3DColor,
-                            fontSize: size15,
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => MyWritePage(
+                              tabIndex: 1,
+                            ),
                           ),
-                        ),
-                        Text(
-                          "12",
-                          style: TextStyle(
-                            color: k3DColor,
-                            fontSize: size20,
-                            fontWeight: FontWeight.bold,
+                        );
+                      },
+                      child: Column(
+                        children: [
+                          Text(
+                            "댓글",
+                            style: TextStyle(
+                              color: k3DColor,
+                              fontSize: size15,
+                            ),
                           ),
-                        ),
-                      ],
+                          Text(
+                            "12",
+                            style: TextStyle(
+                              color: k3DColor,
+                              fontSize: size20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
