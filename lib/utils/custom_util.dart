@@ -79,8 +79,10 @@ Widget customTextFormField({
   TextEditingController? controller,
   String? suffix,
   VoidCallback? suffixOnTap,
+  bool readOnly = false,
 }) {
   return TextFormField(
+    readOnly: readOnly,
     obscureText: obscureText,
     controller: controller,
     style: TextStyle(decorationThickness: 0),

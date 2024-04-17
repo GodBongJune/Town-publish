@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:town/core/constant/color.dart';
 import 'package:town/core/constant/size.dart';
+import 'package:town/pages/my_info_change/my_info_change_page.dart';
 
 class MyPageBody extends StatelessWidget {
   const MyPageBody({super.key});
@@ -10,7 +11,7 @@ class MyPageBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: MediaQuery.of(context).size.height * 0.13),
+        SizedBox(height: MediaQuery.of(context).size.height * 0.15),
         Container(
           decoration: BoxDecoration(
             color: Colors.white,
@@ -35,7 +36,13 @@ class MyPageBody extends StatelessWidget {
                     ),
                     Spacer(),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => MyInfoChangePage(),
+                          ),
+                        );
+                      },
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(40),
