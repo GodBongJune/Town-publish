@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:town/core/constant/color.dart';
 import 'package:town/core/constant/size.dart';
+import 'package:town/pages/content/content_detail_page/content_detail_page.dart';
 
 class ContentPageBody extends StatelessWidget {
   const ContentPageBody({super.key});
@@ -34,47 +35,56 @@ class ContentPageBody extends StatelessWidget {
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
-            child: Container(
-              height: MediaQuery.of(context).size.height * 0.08,
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          contentList[index]["time"],
-                          style: TextStyle(
-                            color: kC8Color,
-                            fontSize: size13,
-                          ),
-                        ),
-                        Text(
-                          contentList[index]["title"],
-                          style: TextStyle(
-                            color: k3DColor,
-                            fontSize: size15,
-                          ),
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ],
-                    ),
+            child: InkWell(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => ContentDetailPage(),
                   ),
-                  SizedBox(width: 10),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(5),
-                    child: SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.07,
-                      width: MediaQuery.of(context).size.height * 0.07,
-                      child: SvgPicture.asset(
-                        contentList[index]["image"],
-                        fit: BoxFit.fill,
+                );
+              },
+              child: Container(
+                height: MediaQuery.of(context).size.height * 0.08,
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            contentList[index]["time"],
+                            style: TextStyle(
+                              color: kC8Color,
+                              fontSize: size13,
+                            ),
+                          ),
+                          Text(
+                            contentList[index]["title"],
+                            style: TextStyle(
+                              color: k3DColor,
+                              fontSize: size15,
+                            ),
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ],
                       ),
                     ),
-                  )
-                ],
+                    SizedBox(width: 10),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(5),
+                      child: SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.07,
+                        width: MediaQuery.of(context).size.height * 0.07,
+                        child: SvgPicture.asset(
+                          contentList[index]["image"],
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
           );

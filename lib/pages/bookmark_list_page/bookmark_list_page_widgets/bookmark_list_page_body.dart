@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:town/core/constant/color.dart';
 import 'package:town/core/constant/size.dart';
+import 'package:town/pages/content/content_detail_page/content_detail_page.dart';
 
 class BookmarkListPageBody extends StatefulWidget {
   const BookmarkListPageBody({super.key});
@@ -33,48 +34,57 @@ class _BookmarkListPageBodyState extends State<BookmarkListPageBody> {
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        bookmarkList[index]["time"],
-                        style: TextStyle(
-                          color: kC8Color,
-                          fontSize: size13,
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        bookmarkList[index]["title"],
-                        style: TextStyle(
-                          color: k3DColor,
-                          fontSize: size15,
-                        ),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ],
+            child: InkWell(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => ContentDetailPage(),
                   ),
-                ),
-                InkWell(
-                  onTap: () {
-                    setState(() {
-                      bookmarkList[index]['bookmark'] =
-                          !bookmarkList[index]['bookmark'];
-                    });
-                  },
-                  child: Icon(
-                    bookmarkList[index]["bookmark"]
-                        ? CupertinoIcons.bookmark_fill
-                        : CupertinoIcons.bookmark,
-                    color:
-                        bookmarkList[index]["bookmark"] ? kFFColor : k3DColor,
+                );
+              },
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          bookmarkList[index]["time"],
+                          style: TextStyle(
+                            color: kC8Color,
+                            fontSize: size13,
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        Text(
+                          bookmarkList[index]["title"],
+                          style: TextStyle(
+                            color: k3DColor,
+                            fontSize: size15,
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                  InkWell(
+                    onTap: () {
+                      setState(() {
+                        bookmarkList[index]['bookmark'] =
+                            !bookmarkList[index]['bookmark'];
+                      });
+                    },
+                    child: Icon(
+                      bookmarkList[index]["bookmark"]
+                          ? CupertinoIcons.bookmark_fill
+                          : CupertinoIcons.bookmark,
+                      color:
+                          bookmarkList[index]["bookmark"] ? kFFColor : k3DColor,
+                    ),
+                  ),
+                ],
+              ),
             ),
           );
         },

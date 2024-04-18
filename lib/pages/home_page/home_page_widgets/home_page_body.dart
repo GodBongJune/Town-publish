@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:town/core/constant/color.dart';
 import 'package:town/core/constant/size.dart';
-import 'package:town/pages/content_page/content_page.dart';
+import 'package:town/pages/calendar_page/calendar_page.dart';
+import 'package:town/pages/content/content_page/content_page.dart';
 
 class HomePageBody extends StatefulWidget {
   const HomePageBody({super.key});
@@ -15,7 +16,7 @@ class _HomePageBodyState extends State<HomePageBody> {
   List<Map<String, dynamic>> homeList = [
     {
       "image": "assets/home/free.svg",
-      "route": "",
+      "route": ContentPage(),
     },
     {
       "image": "assets/home/life.svg",
@@ -27,7 +28,7 @@ class _HomePageBodyState extends State<HomePageBody> {
     },
     {
       "image": "assets/home/group.svg",
-      "route": "",
+      "route": CalendarPage(),
     },
     {
       "image": "assets/home/place.svg",
@@ -113,7 +114,7 @@ class _HomePageBodyState extends State<HomePageBody> {
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => ContentPage(),
+                      builder: (context) => homeList[index]["route"],
                     ),
                   );
                 },

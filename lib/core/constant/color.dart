@@ -12,3 +12,5 @@ const kFEColor = Color(0xFFFEF8E5);
 const kEEColor = Color(0xFFEEEEEE);
 const kFAColor = Color(0xFFFAFAFA);
 const kFFColor = Color(0xFFFFC656);
+const k96Color = Color(0xFF969696);
+const kEAColor = Color(0xFFEA4335);

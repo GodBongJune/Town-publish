@@ -41,6 +41,9 @@ dependencies:
   logger: ^2.0.2+1 #로그 라이브러리
   flutter_secure_storage: ^9.0.0 #휴대폰저장 라이브러리
   image_picker: ^1.0.8 #사진선택 라이브러리
+  table_calendar: ^3.0.9 #캘린더 라이브러리
+  intl: ^0.18.1 #한글패치 라이브러리
+
 
 
 
